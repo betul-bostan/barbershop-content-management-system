@@ -1,0 +1,471 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;/*altı çizili olmayacak*/
+    color: #000;
+    /*color:#2d3a4b;*/
+}
+body{
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+}
+li{
+    list-style: none;
+     /*madde imlerini göstermeyecek*/
+}
+.font-montserrat{
+    font-family: 'Montserrat', sans-serif;
+}
+.font-playfair{
+    font-family: 'Playfair', serif;
+}
+.text-orange{
+    color: #f38509;
+}
+.text-yellow{
+    color: #ffe115;
+}
+.bg-orange{
+    background-color: #f38509;
+}
+.bg-yellow{
+    background-color: #ffe115;
+}
+.fw-bold-600{
+    font-weight: 600;
+}
+.ust-bolum{
+    height: 50px;
+}
+.ust-bolum .giris li{
+    display: inline-block;/*yan yana getirme*/
+    padding: 0 15px;
+}
+.ust-bolum .giris li a{
+    line-height: 50px;/*yazının boyutu*/
+    font-size: 30px;/*iconların büyüklüğü*/
+    text-transform: uppercase;
+}
+.kullanici-bildirimi .bildirim-sayisi{
+    position: absolute;
+    top: 5px;
+    right: 32px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;/*yuvarlama*/
+    text-align: center;
+    font-size: 15px;
+    line-height: 22px;
+}
+.ust-bolum .kullanici-bildirimi .dropdown-menu{
+    padding: 20px;
+    border: 0;
+    border-radius: 0;
+    min-width: 350px;
+    top: 12px !important;
+    right: 0 !important;
+    left: auto !important;/*kendisi değer versin diye sabitledik*/
+    box-shadow: -1px 2px 20px rgba(0, 0, 0, 0.3);/*gölgelendirme x y blur*/
+}
+.kaydirma-cubugu{
+    max-height: 200px;
+    overflow-y: auto;
+    scrollbar-width: thin; /*aşağı yukarı imleçini ince yapma*/
+}
+/*header ve navbar için css*/
+header{
+    height: 130px;
+    padding: 30px;
+}
+.logo{
+    width: 95px;
+    margin-top: -42px;
+}
+header nav li.nav-item{ 
+    margin: 0 5px;
+    padding: 15px 0;
+}
+header nav li a.nav-link{
+    font-size: 14px !important;
+    font-size: normal;
+    color: #2d3a4b;
+    text-transform: uppercase;
+    margin: 0 10px;
+    letter-spacing: 3px; /*harflerin arasındaki boşluk*/
+    position: relative;
+    transition: all .3s linear;/*üzerine gelip gitme işlemi*/
+}
+header nav li a.nav-link:before{
+    width: 0;
+    margin: 0 auto;
+    position: absolute;
+    content: "";/*içerik düz olarak verildi ki düz çizgi çıkabilsin*/
+    height: 5px;
+    left: 0;
+    top: 45%;
+    z-index: -1;/*kodun altta kalmasını sağlıyor*/
+    background-color: #ffe115;
+    transition: 0.2s ease-in-out ;/*geri dönme işlemi*/
+}
+header nav li a.nav-link:hover:before{
+    /*üzerinde geldiğimizde*/
+    width: 100%;
+}
+header nav li.active a.nav-link:before{
+    width: 100%;
+    margin: 0 auto;
+    position: absolute;
+    content: "";/*içerik düz olarak verildi ki düz çizgi çıkabilsin*/
+    height: 5px;
+    left: 0;
+    top: 45%;
+    z-index: -1;/*kodun altta kalmasını sağlıyor*/
+    background-color: #ffe115;
+    transition: 0.2s ease-in-out ;/*geri dönme işlemi*/
+}
+.nav-right{
+    margin-left: 20px;
+    margin-top: -5px;
+}
+.nav-right i{
+    font-size: 20px;
+}
+.zoom:before{
+    transition: transform 1s ease;/*zoom yapma bir anda büyüyüp küçülmesin diye*/
+}
+.zoom:hover:before{
+    transform: scale(1.5);/*yüzde yüz elli büyüme sağlar scale ölçekleme denir*/
+}
+/*ekstralar bölümü için css*/
+.navbar-nav .dropdown{
+    position: unset; /*bölümün aşağı değilde yana doğru açılmasını sağlıyor*/
+}
+.navbar-nav .dropdown .dropdown-menu{
+    width: 70%;
+    left: 15%;
+    padding: 30px;
+    top: 105px;
+}
+.dropdown-menu a.dropdown-link{
+    display: block; /*çizgi çizgi birbirinden ayırmak için*/
+    font-size: 14px;
+}
+.dropdown-menu a.dropdown-link:hover{
+    color:#f38509 /*hover üzerinde gelindiğinde turuncu olsun*/
+    
+}
+.ekstra-cubugu{
+    border-right: 1px solid rgba(0, 0, 0, 0.16);
+    padding-left: 35px;
+}
+.navbar-brand-swiper img{
+    max-height: 190px;
+}
+
+.search-inside{
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0.8;
+    z-index: 500;
+    background-color: #f38509;
+}
+.search-inside .position-center-center{
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);/*ortalama*/
+    position: absolute;
+    padding: 0 20px;
+}
+.search-inside .search{
+    display: inline-block;
+    width: 100%;
+    position: relative;
+}
+.search-inside .search input{
+    background-color: #fff;
+    font-size: 20px;
+    color: #333;
+    text-align: left;
+    height: 60px;
+    width: 100%;
+    border: none;
+    padding: 0 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+.search-inside .search input:focus{
+    outline: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+.search-inside .search button{
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 30px;
+    margin-top: 0;
+    background: none;
+    line-height: 60px;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    border: none;
+}
+.search-inside .search-close{
+    position: absolute;
+    right: 50px;
+    top: 50px;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+/*fotoğrafların olduğu büyük kısım*/
+.slider{
+    height: 500px;
+    overflow: hidden; /*bu olmasa da olur*/
+}
+.slider,
+.swiper-container,
+.brand-swiper,
+.season-product-swiper{
+    overflow-x: hidden;
+}
+ 
+.slider .slide{
+    display: flex; /*yan yana gelme*/
+    justify-content: center; /*içerik ortalı bir şekilde gelsin*/
+    align-items: center;/*dikeydeki ortalık*/
+    height: 500px;
+    width: 100%;
+
+}
+.slider-slide .slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*containere (ortası) sığacak kadar boyutlandırılır*/
+}
+.home-swiper .swiper-button-next,
+.home-swiper .swiper-button-prev{
+    width: 100px;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    transition: background-color 0.4 ease; /*renk değiştirme*/
+}
+.home-swiper .swiper-button-next:hover,
+.home-swiper .swiper-button-prev:hover{
+    background-color: #fff;
+    color: #000;
+    
+}
+.slider-title{
+    position: absolute; /*resmin üstüne yazıyı getirme*/
+    top: 40%;  /*50%*/
+    transform: translateY(-50%);
+    z-index: 10; /*yukarı çıkarma*/
+    width: 100%;
+    text-align: center;
+}
+.slider-title h3{
+    font-size: 55px;
+    font-weight: 600;
+
+}
+.slider-title h2{
+    font-size: 75px;
+    text-align: center;
+    font-weight: 600;
+}
+.slider-title a{
+    border-radius: 0;/* kenarlık yuvarlaklığı*/
+    font-size: 20px;
+    padding: 10px 30px;
+}
+.baslik-kismi{
+    display: flex;
+    flex-direction: column;/*dikey olarak hizalama*/
+    justify-content: center;/* içeriğini yatayda ortalı hizala*/
+    align-items: center;/*içeriği dikeyde hizala*/
+}
+/*kullandığımız markaların css bölümü*/
+.kullanilan-markalar h3{
+    letter-spacing: 2px;
+    text-transform: uppercase; /*büyük harfler*/
+}
+.kullanilan-markalar .brand-swiper{
+    height: 100%;
+    line-height: 100%;
+}
+.kullanilan-markalar .brand-swiper img{
+    height: 100px;
+    line-height: 100px;
+}
+
+
+.kullanilan-markalar .brand-slider{
+    transition: filter 0.3s, background-color 0.3s;
+    /*sadece filtreleme işlemi yaptığın sırada
+    0.3s de çalış ve arka plan rengisini de 0.3 s de çalış normal duruma geçiş efekti*/
+    background-color: #fff;
+}
+.kullanilan-markalar .brand-slider:hover{
+    cursor: pointer;
+    background-color:rgba(0, 0, 0, 0.5);
+    transition: filter 0.3s, background-color 0.3s;
+}
+
+.kullanilan-markalar .swiper-button-next,
+.kullanilan-markalar .swiper-button-prev,
+.sezon-kesim-modelleri .swiper-button-next,
+.sezon-kesim-modelleri .swiper-button-prev{
+    top: 14px;
+    bottom: auto;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+}
+.kullanilan-markalar .swiper-button-next:after,
+.kullanilan-markalar .swiper-button-prev:after,
+.sezon-kesim-modelleri .swiper-button-next:after,
+.sezon-kesim-modelleri .swiper-button-prev:after{
+    font-size: 15px;
+    color: #2d3a4b;
+}
+.kullanilan-markalar .swiper-button-next:hover,
+.kullanilan-markalar .swiper-button-prev:hover,
+.sezon-kesim-modelleri .swiper-button-next:hover,
+.sezon-kesim-modelleri .swiper-button-prev:hover{
+    border-radius: 40px;
+    border: 1px solid #2d3a4b;
+}
+.kullanilan-markalar .swiper-button-next,
+.sezon-kesim-modelleri .swiper-button-next{
+    right: 25px;
+    left: auto;
+}
+.kullanilan-markalar .swiper-button-prev,
+.sezon-kesim-modelleri .swiper-button-prev{
+    right: 60px;
+    left: auto;
+}
+/*çalışma saatlerinin olduğu yer*/
+.hizmetler-bolumu-resmi .banner{
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+}
+.banner img{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); /*hem dikey hem de yatayda */
+    /*object-fit: cover;*/
+    object-fit: contain;
+}
+/*trendlerin olduğu bölüm*/
+.sezon-kesim-modelleri{
+    background-color: rgb(245 151 60 / 21%);
+}
+
+.wrapper-product .product-overlay{
+    position: absolute; /*havada uçsun*/
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.wrapper-product .product-tag{
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    font-size: 10px;
+    letter-spacing: 0.04em; /*binde 4 oranında kalınlaştır*/
+}
+.wrapper-product .favorite,
+.wrapper-product .unfavorite{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+}
+.wrapper-product .product-brand{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 12px;
+    padding-inline-start: 5px;/*başlangıç noktasından*/
+    padding-inline-end: 5px;/*bittiği noktadan*/
+    padding: 2px; /*alttan üstten*/
+    letter-spacing: 1px;
+}
+.wrapper-product .product-info .product-title{
+    font-size: 19px;
+    margin-bottom: 0; /*hiden otomatik margin bottomunu vermesin*/
+}
+.wrapper-product .product-info .product-discription{
+    font-size: 14px;
+}
+.wrapper-product .product-info .product-price{
+    font-weight: 500 ; /*normal*/
+    font-size: 14px;
+}
+footer{
+    text-align: center;
+    background-color: #171e27;
+    padding: 90px 0;
+}
+footer h6{
+    font-size: 24px;
+    letter-spacing: 0.2em;
+    margin-bottom: 40px;
+}
+footer ul{
+    padding-left: 0;
+}
+footer li a{
+    font-size: 18px;
+    color: #999;
+    line-height: 26px;
+    display: inline-block ; /*satır içinde blocklar oluştur*/
+}
+footer li a:hover{
+    color: #fff;
+}
+/*main için css*/
+main{
+    padding: 30px;
+}
+.sortby{
+    border: unset; /*border kenarlığı olmasın vermedim*/
+    padding-right: 5px;
+    font-size: 14px;
+}
+.product-list-info  .product-count{
+    font-size: 12px;
+}
+/*sayfaların olduğu alan*/
+.pagination li.active a,
+.pagination li a:hover{
+    background-color: #ffe115;
+    color:#2d3a4b;
+}
+.pagination li a{
+    background-color:#2d3a4b;
+    color: #fff;
+    margin: 0 2px;
+    width: 23px;
+    text-align: center;
+    line-height: 23px;
+    font-size: 12px;
+    position: relative;
+    float: left;
+}
+
+
