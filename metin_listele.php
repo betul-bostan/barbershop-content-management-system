@@ -27,7 +27,7 @@ if(isset($_SESSION["kadi"])){
     }
     echo "</table>";
 }else{
-    header("Location:login.php");
+    header("Location: login.php");
     exit;
 }
 ?>
