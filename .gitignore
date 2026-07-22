@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+
+# Environment variables
+.env
+.env.*
+
+# IDE settings
+.vscode/
+.idea/
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# User uploads
+uploads/*
+!uploads/.gitkeep
