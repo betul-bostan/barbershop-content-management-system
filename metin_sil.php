@@ -6,7 +6,8 @@ $id=$_GET["id"];
 $sorgu= "DELETE FROM `makale` WHERE makale_id=$id";
 $sonuc = mysqli_query($baglanti,$sorgu);
 if($sonuc){
-    header("location:metin_listele.php");
+    header("Location: metin_listele.php");
+    exit;
 }else{
     echo "Problem var";
 }
