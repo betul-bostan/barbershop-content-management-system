@@ -33,6 +33,7 @@ if(isset($_SESSION["kadi"])){
     }
 }
 else{
-    header("location:login.php");
+    header("Location:login.php");
+    exit;
 }
 ?>
