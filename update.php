@@ -14,7 +14,8 @@ $sorgu = "UPDATE `makale` SET `baslik_dizi`='$baslik_dizi',
 makale_id=$id";
 $sonuc=mysqli_query($baglanti,$sorgu);
 if($sonuc){
-    header("location:metin_listele.php");
+    header("Location: metin_listele.php");
+    exit;
     //echo "Kayıt başarıyla güncellendi";
 }else{
     echo "Problem var";
