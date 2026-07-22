@@ -9,6 +9,7 @@ if(isset($_SESSION["kadi"])){
         <li><a href="logout.php">Oturumu Kapat</a></li>  
     </ul>';
 }else{
-    header("location:login.php");
+    header("Location: login.php");
+    exit;
 }
 ?>
