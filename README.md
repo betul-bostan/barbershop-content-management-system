@@ -68,8 +68,8 @@ barbershop-content-management-system/
 ├── metin_listele.php
 ├── metin_guncelle.php
 ├── metin_sil.php
-├── islem.php
-├── update.php
+├── create_content.php
+├── update_content.php
 ├── sayfa.php
 ├── tema.php
 ├── altsayfa.php
